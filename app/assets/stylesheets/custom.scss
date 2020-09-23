@@ -139,3 +139,34 @@ h1, h2 {
     }
   }
 }
+
+
+.like-btn {
+ width: 25px;
+ height: 30px;
+ font-size: 25px;
+ color: #808080; 
+ margin-left: 20px;
+ float:left;
+ }
+
+.unlike-btn {
+ width: 25px;
+ height: 30px;
+ font-size: 25px;
+ color: #e54747;
+ margin-left: 20px;
+ float:left;
+ }
+ 
+ .count{
+   float:left;
+   
+ }
+ 
+ .part:after{
+   clear:both;
+   display: block;
+   content: " ";
+ }
+ 

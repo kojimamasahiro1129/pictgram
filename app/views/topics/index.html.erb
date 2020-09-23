@@ -8,11 +8,60 @@
               <%= topic.user.name %>
             </h2>
             <%= image_tag topic.image.url %>
-            <%= image_tag 'icons/heart-black.png', class: 'topic-index-icon' %>
-            <%= image_tag 'icons/comment.png', class: 'topic-index-icon' %>
+            
+            
+            
+          <% if !topic.favorite_users.include?(current_user) %>
+            <%= link_to favorites_path(topic_id: topic.id), method: :post do %>
+           
+           <div class="part">
+                <div class="like-btn">
+                    <%= fa_icon("heart") %>
+                </div>
+                <div class="count">
+                      <%= topic.favorite_users.count %>
+                 </div>
+           </div>
+             <!--<i class="fas fa-heart like-btn"></i>-->
+           <!--icon('fas', 'fa-heart', class: 'like-btn')-->
+        
+
+            <% end %>
+          <% else %>
+            <%= link_to favorites_path(topic_id: topic.id), method: :delete do %>
+              <div class="unlike-btn">
+                 <%= fa_icon("heart") %>
+              </div>
+              <%= topic.favorite_users.count %>
+            <!--<i class="fas fa-heart unlike-btn"></i>-->
+             <!--icon('fas','fa-heart',class:'unlike-btn') -->
+          <% end %>
+          <% end %>
+          
+ 
+              <%= image_tag 'icons/comment.png', class: 'topic-index-icon' %>
+
+        
+            
             <p class="topic-text">
               <%= topic.description %>
             </p>
+            
+            <!--コメント一覧-->
+              <h4>コメント</h4>
+              <% topic.comments.each do |comment| %>
+                <%=simple_format(comment.content)%>
+              <% end %>
+
+
+            <%= form_for @comment do |f| %>
+              <div class="form-group">
+                <%=f.text_area :content ,class: "form-control"%>
+                <%=f.hidden_field :topic_id, :value => topic.id %>
+              </div> 
+              <%= f.submit '投稿', class: 'btn btn-info btn-block' %>
+            <%end%>
+            
           </div>
         </div>
       </div>

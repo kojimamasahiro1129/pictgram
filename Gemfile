@@ -38,6 +38,9 @@ gem 'bootsnap', '>= 1.1.0', require: false
 gem 'bootstrap-sass'
 gem 'jquery-rails'
 gem "carrierwave"
+gem 'font-awesome-rails'
+gem 'font-awesome-sass'
+
 
 
 group :development, :test do
