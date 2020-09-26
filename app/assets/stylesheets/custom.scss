@@ -141,23 +141,32 @@ h1, h2 {
 }
 
 
-.like-btn {
- width: 25px;
- height: 30px;
- font-size: 25px;
- color: #808080; 
- margin-left: 20px;
- float:left;
- }
 
-.unlike-btn {
- width: 25px;
- height: 30px;
- font-size: 25px;
- color: #e54747;
- margin-left: 20px;
- float:left;
- }
+
+.like-btn img {
+   
+    filter: invert(15%) sepia(95%) saturate(6932%) hue-rotate(358deg) brightness(95%) contrast(112%);
+
+}
+
+.like-btn{
+  display:inline;
+}
+
+.unlike-btn{
+   display: inline;
+}
+.like-btn img{
+    // filter: invert(15%) sepia(95%) saturate(6932%) hue-rotate(358deg) brightness(95%) contrast(112%);
+}
+// .unlike-btn {
+// width: 25px;
+// height: 30px;
+// font-size: 25px;
+// color: #e54747;
+// margin-left: 20px;
+// float:left;
+// }
  
  .count{
    float:left;
